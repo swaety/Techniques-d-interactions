@@ -1,0 +1,88 @@
+:root {
+  --couleurWhitePen: white;  
+  --couleurBlackPen: black; 
+  --couleurWhitePenduFond: white;
+}
+
+body { 
+	min-width: 800px; 
+	color: var(--couleurBlackTaq);
+}
+
+h1 {
+	text-align: center;
+	font-style: italic;
+	margin: 0px;
+}
+
+#jeu {
+	font-family: monospace;
+	font-size: 45px;
+}
+
+button{
+	color: var(--couleurWhite);
+	background-color: var(--couleurBlack);
+}
+
+.jeu { 
+	padding: 0px; 
+}
+
+.pendu {
+	margin: 0px;
+	text-align: center;
+}
+
+#pendu{
+	background-color: var(--couleurWhitePenduFond);
+}
+
+#alpha {
+	padding: 0px;
+	text-align: center;
+}
+
+.alpha {
+	font-family: monospace;
+	font-weight: bold;
+	font-size: x-large;
+}
+
+#controle { 
+	margin: 14px auto 14px auto;
+	width: 25%;
+}
+
+button[type=submit] {
+    width: 100%;
+	height: 100%;
+    background-color: var(--couleurBlackPen);
+    color: var(--couleurWhitePen);
+    padding: 10px 10px;
+	position: relative;
+    border: none;
+    cursor: pointer;
+	font-size: 40px;
+}
+
+#console {
+	padding: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.bravo .perdu{
+	font-size: x-large;
+	font-style: italic;
+}
+
+#jeu {
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+
+.invisible { 
+	visibility: hidden; 
+}

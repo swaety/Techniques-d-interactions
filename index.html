@@ -1,0 +1,105 @@
+<!DOCTYPE html">
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Peaky</title>
+	<link rel="stylesheet" href="styles/main.css">	
+	<link rel="stylesheet" href="styles/none.css">	
+  </head>
+  
+  <body>
+	<div class="jumbotron">
+		<div id="conteneur">   	 	
+			<h2>Ici tu pourras trouver differents jeux accessibles pour tous et adaptés pour les personnes mal voyantes</h2>
+			<p class="lead">
+				Essayez de battre vos propres records
+			</p>
+			<div> 
+				<a href="./html/Labyrinthe.html"><button type="button" class="btn">Labyrinthe <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+				<a href="./html/Pendu.html"><button type="button" class="btn">Le Pendu <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+				<a href="./html/Taquin.html"><button type="button" class="btn">Taquin <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+				<a href="./html/Vortex.html"><button type="button" class="btn">Vortex <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+			</div>
+		</div>
+	</div>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html">
+			<img class="home" src="images/home/home.png" onmouseover="this.src='images/home/homeblack.png'" onmouseout="this.src='images/home/home.png'"/>
+		</a>
+		<a href="" onclick="normal()">Couleurs normales</a>
+		<a href="" onclick="green()">Couleur Noir/Vert</a>
+		<a href="" onclick="orange()">Couleur Noir/orange</a>
+		<a href="" onclick="pink()">Couleur Rose/Bleu</a>
+	</div> 
+	<script>
+	
+		var color;
+		function changeCSS(cssFile) {
+			var oldlink = document.getElementsByTagName("link").item(1);
+			var newlink = document.createElement("link");
+			newlink.setAttribute("rel", "stylesheet");
+			newlink.setAttribute("type", "text/css");
+			newlink.setAttribute("href", "styles/" + cssFile);
+
+			document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+		}
+		
+		function changehome(col) {
+			
+			var oldlinka = document.getElementsByTagName("img").item(0);
+			var newlinka = document.createElement("img");
+			newlinka.setAttribute("classe", "home");
+			if(col == "none.css"){
+				newlinka.setAttribute("src", "images/home/home.png");
+				newlinka.setAttribute("onmouseover", "this.src='images/home/homeblack.png'");
+				newlinka.setAttribute("onmouseout", "this.src='images/home/home.png'");
+			}
+			else if(col == "green.css"){
+				newlinka.setAttribute("src", "images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='images/home/homegreen.png'");
+				newlinka.setAttribute("onmouseout", "this.src='images/home/homeblack.png'");
+			}
+			else if(col == "orange.css"){
+				newlinka.setAttribute("src", "images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='images/home/homeorange.png'");
+				newlinka.setAttribute("onmouseout", "this.src='images/home/homeblack.png'");
+			}
+			else if(col == "pink.css"){
+				newlinka.setAttribute("src", "images/home/homeblue.png");
+				newlinka.setAttribute("onmouseover", "this.src='images/home/homepink.png'");
+				newlinka.setAttribute("onmouseout", "this.src='images/home/homeblue.png'");
+			}
+
+			document.getElementsByTagName("body").item(0).replaceChild(newlinka, oldlinka);
+		}
+		
+		if(document.cookie.split(';')[0] != ""){
+			color = document.cookie.split(';')[0] + ".css";
+		}else{
+			color = "none.css"
+		};
+		
+		changeCSS(color);
+		changehome(color);
+		
+		function normal (){
+			document.cookie = "none";
+			changeCSS("none.css");	
+		}
+		function green (){
+			document.cookie = "green"; 
+			changeCSS("green.css");	
+		}
+		function orange (){
+			document.cookie = "orange"; 
+			changeCSS("orange.css");	
+		}
+		function pink (){
+			document.cookie = "pink"; 
+			changeCSS("pink.css");	
+		}
+	</script>
+  </body>
+</html>
+
+

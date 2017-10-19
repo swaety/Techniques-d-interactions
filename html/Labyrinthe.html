@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+	<head>
+		<link href="../styles/Labyrinthe.css" type="text/css" rel="stylesheet" charset="utf-8" />
+		<link rel="stylesheet" href="../styles/main.css">
+		<link rel="stylesheet" href="../styles/none.css">
+		<script src="../scripts/Labyrinthe.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../scripts/Jeu.js" type="text/javascript" charset="utf-8"></script> 
+		<script>
+		'use strict';
+		document.addEventListener('keypress', (event) => {
+		  if(event.key == "ArrowLeft"){Jeu.clicPlus();}
+		  else if(event.key == "ArrowUp"){Jeu.clicAvancer();}
+		  else if(event.key == "ArrowRight"){Jeu.clicMoins();}
+		});
+		</script>
+	</head>
+	<body onload="Jeu.init()">
+		<h1>Labyrinthe</h1> 
+
+		<div id="jeu">
+		</div>
+		<div class="console">
+			<h2 id="console"></h2>
+		</div>
+		
+		<h3>Règles du jeu : fait parcourir la flèche du point de départ à l'arrivé en utilisant les boutons (pivoter à gauche, avancer ou pivoter à droite) ou bien en utilisant les flèches directionelles de ton clavier</h3>
+
+		<div class="controle">
+			<img src="../images/plus.png" onclick="Jeu.clicPlus()" alt="" /><img src="../images/avancer.png" onclick="Jeu.clicAvancer()" alt="" /><img src="../images/moins.png" onclick="Jeu.clicMoins()" alt="" /> 
+		</div>		
+		<div class="topnav" id="myTopnav">
+			<a href="../index.html">
+				<img class="home" src="../images/home/home.png" onmouseover="this.src='../images/home/homeblack.png'" onmouseout="this.src='../images/home/home.png'"/>
+			</a>
+			<a href="" onclick="normal()">Couleurs normales</a>
+			<a href="" onclick="green()">Couleur Noir/Vert</a>
+			<a href="" onclick="orange()">Couleur Noir/orange</a>
+			<a href="" onclick="pink()">Couleur Rose/Bleu</a>
+		</div>
+		<script>
+			function changeCSS(cssFile) {
+				var oldlink = document.getElementsByTagName("link").item(2);
+				var newlink = document.createElement("link");
+				newlink.setAttribute("rel", "stylesheet");
+				newlink.setAttribute("type", "text/css");
+				newlink.setAttribute("href", "../styles/" + cssFile);
+
+				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			if(document.cookie.split(';')[0] != ""){
+				var color = document.cookie.split(';')[0] + ".css";
+			}else{
+				var color = "none.css"
+			};
+			changeCSS(color);
+			
+			function normal (){
+				document.cookie = "none";
+				changeCSS("none.css");	
+			}
+			function green (){
+				document.cookie = "green"; 
+				changeCSS("green.css");	
+			}
+			function orange (){
+				document.cookie = "orange"; 
+				changeCSS("orange.css");	
+			}
+			function pink (){
+				document.cookie = "pink"; 
+				changeCSS("pink.css");	
+			}
+		</script>
+	</body>
+</html>

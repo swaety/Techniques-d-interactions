@@ -1,0 +1,50 @@
+:root {
+  --couleurWhiteLab: white;  
+  --couleurBlackLab: Black; 
+}
+
+body{
+	color: var(--couleurBlackLab);
+}
+
+h1 {
+	margin: 0px;
+	text-align: center;
+	font-style: italic;
+}
+
+#jeu {
+	text-align: center;
+	padding: 10px;
+}
+
+.zone {
+	border-top: 12px #CCC solid;
+	border-right: 12px #333 solid;
+	border-bottom: 12px #666 solid;
+	border-left: 12px #999 solid;
+}
+
+.kz {
+	width: 50px;
+	height: 50px;
+	background-color: var(--couleurWhiteLab);
+	font-family: sans-serif;
+	font-size: 18pt;
+	border-top: 2px --couleurWhiteLab: white; solid;
+	border-left: 2px --couleurWhiteLab: white; solid;
+}
+
+.murN { border-top: 2px var(--couleurBlackLab) solid; }
+.murW { border-left: 2px var(--couleurBlackLab) solid; }
+.murS { border-bottom: 2px var(--couleurBlackLab) solid; }
+.murE { border-right: 2px var(--couleurBlackLab) solid; }
+.entree { background-color: #F99; }
+.sortie { background-color: #9F9; }
+
+.invisible { display: none; }
+
+.controle {
+	text-align: center;
+	margin: 5px;
+}

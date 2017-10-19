@@ -1,0 +1,17 @@
+:root {
+  --couleurNavBar: orange;
+  --couleurWhite: black;  
+  --couleurBlack: orange; 
+  --couleurWhitePen: black;  
+  --couleurBlackPen: orange; 
+  --couleurWhitePenduFond: orange;
+  --couleurWhiteVor: black;  
+  --couleurBlackVor: orange; 
+  --couleurWhiteLab: black;  
+  --couleurBlackLab: orange;
+  --couleurWhiteTaq: black;  
+  --couleurBlackTaq: orange;
+  --couleurWhiteTaqBut: orange;  
+  --couleurBlackTaqBut: black; 
+  --couleurBlackTaqFond: black;  
+}

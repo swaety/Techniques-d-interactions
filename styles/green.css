@@ -1,0 +1,17 @@
+:root {
+  --couleurNavBar: green;
+  --couleurWhite: black;  
+  --couleurBlack: green; 
+  --couleurWhitePen: black;  
+  --couleurBlackPen: green; 
+  --couleurWhitePenduFond: green;
+  --couleurWhiteVor: black;  
+  --couleurBlackVor: green; 
+  --couleurWhiteLab: black;  
+  --couleurBlackLab: green;
+  --couleurWhiteTaq: black;  
+  --couleurBlackTaq: green;
+  --couleurWhiteTaqBut: green;  
+  --couleurBlackTaqBut: black; 
+  --couleurBlackTaqFond: black;  
+}

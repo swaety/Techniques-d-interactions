@@ -1,0 +1,17 @@
+:root {
+  --couleurNavBar: pink;
+  --couleurWhite: blue;  
+  --couleurBlack: pink; 
+  --couleurWhitePen: blue;  
+  --couleurBlackPen: pink; 
+  --couleurWhitePenduFond: pink;
+  --couleurWhiteVor: blue;  
+  --couleurBlackVor: pink; 
+  --couleurWhiteLab: blue;  
+  --couleurBlackLab: pink;
+  --couleurWhiteTaq: blue;  
+  --couleurBlackTaq: pink;
+  --couleurWhiteTaqBut: pink;  
+  --couleurBlackTaqBut: blue; 
+  --couleurBlackTaqFond: blue;  
+}

@@ -1,0 +1,59 @@
+:root {
+  --couleurNavBar: #333;
+  --couleurWhite: white;  
+  --couleurBlack: black; 
+}
+
+body {
+	margin: 10px 0 ;
+	padding: 0 ;
+	text-align: center ;
+	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+	height: 70%;
+	background-color: var(--couleurWhite);
+}
+
+.home{
+	width:20px;height:20px;
+}
+
+.topnav {
+	background-color: var(--couleurNavBar);
+	bottom: 0px;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+}
+
+.jumbotron button{
+	font-size: 21px;
+	padding: 14px 24px 14px 24px;
+	margin: 14px 24px 14px 24px;
+	width: 40%;
+	color: var(--couleurBlack);
+	background-color: var(--couleurWhite);
+}
+
+.jumbotron {
+  text-align: center;
+  margin: 10%;
+  padding: 14px 24px 14px 24px;
+  background-color: var(--couleurNavBar);
+  color: var(--couleurWhite);
+  border-radius: 30px 
+}
+
+.topnav a {
+	float: left;
+	display: inline-block;
+	color: var(--couleurWhite);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav a:hover {
+	background-color: var(--couleurWhite);
+	color: var(--couleurBlack);
+}

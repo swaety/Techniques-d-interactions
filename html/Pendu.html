@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+	<head>
+		<link href="../styles/Pendu.css" type="text/css" rel="stylesheet" />
+		<link href="../styles/main.css" type="text/css" rel="stylesheet" >
+		<link rel="stylesheet" href="../styles/none.css">
+		<script src="../scripts/Dico.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="../scripts/Pendu.js" type="text/javascript" charset="utf-8"></script> 
+		<script>
+			'use strict';
+			document.addEventListener('keypress', (event) => {
+			  if(event.key == "a" && !document.getElementsByTagName("button").item(0).disabled){clicLettre( document.getElementsByTagName("button").item(0), 'A'); }  
+			  else if(event.key == "b" && !document.getElementsByTagName("button").item(1).disabled){clicLettre(document.getElementsByTagName("button").item(1), 'B');}
+			  else if(event.key == "c" && !document.getElementsByTagName("button").item(2).disabled){clicLettre(document.getElementsByTagName("button").item(2), 'C');}
+			  else if(event.key == "d" && !document.getElementsByTagName("button").item(3).disabled){clicLettre(document.getElementsByTagName("button").item(3), 'D');}
+			  else if(event.key == "e" && !document.getElementsByTagName("button").item(4).disabled){clicLettre(document.getElementsByTagName("button").item(4), 'E');}
+			  else if(event.key == "f" && !document.getElementsByTagName("button").item(5).disabled){clicLettre(document.getElementsByTagName("button").item(5), 'F');}
+			  else if(event.key == "g" && !document.getElementsByTagName("button").item(6).disabled){clicLettre(document.getElementsByTagName("button").item(6), 'G');}
+			  else if(event.key == "h" && !document.getElementsByTagName("button").item(7).disabled){clicLettre(document.getElementsByTagName("button").item(7), 'H');}
+			  else if(event.key == "i" && !document.getElementsByTagName("button").item(8).disabled){clicLettre(document.getElementsByTagName("button").item(8), 'I');}
+			  else if(event.key == "j" && !document.getElementsByTagName("button").item(9).disabled){clicLettre(document.getElementsByTagName("button").item(9), 'J');}
+			  else if(event.key == "k" && !document.getElementsByTagName("button").item(10).disabled){clicLettre(document.getElementsByTagName("button").item(10), 'K');}
+			  else if(event.key == "l" && !document.getElementsByTagName("button").item(11).disabled){clicLettre(document.getElementsByTagName("button").item(11), 'L');}
+			  else if(event.key == "m" && !document.getElementsByTagName("button").item(12).disabled){clicLettre(document.getElementsByTagName("button").item(12), 'M');}
+			  else if(event.key == "n" && !document.getElementsByTagName("button").item(13).disabled){clicLettre(document.getElementsByTagName("button").item(13), 'N');}
+			  else if(event.key == "o" && !document.getElementsByTagName("button").item(14).disabled){clicLettre(document.getElementsByTagName("button").item(14), 'O');}
+			  else if(event.key == "p" && !document.getElementsByTagName("button").item(15).disabled){clicLettre(document.getElementsByTagName("button").item(15), 'P');}
+			  else if(event.key == "q" && !document.getElementsByTagName("button").item(16).disabled){clicLettre(document.getElementsByTagName("button").item(16), 'Q');}
+			  else if(event.key == "r" && !document.getElementsByTagName("button").item(17).disabled){clicLettre(document.getElementsByTagName("button").item(17), 'R');}
+			  else if(event.key == "s" && !document.getElementsByTagName("button").item(18).disabled){clicLettre(document.getElementsByTagName("button").item(18), 'S');}
+			  else if(event.key == "t" && !document.getElementsByTagName("button").item(19).disabled){clicLettre(document.getElementsByTagName("button").item(19), 'T');}
+			  else if(event.key == "u" && !document.getElementsByTagName("button").item(20).disabled){clicLettre(document.getElementsByTagName("button").item(20), 'U');}
+			  else if(event.key == "v" && !document.getElementsByTagName("button").item(21).disabled){clicLettre(document.getElementsByTagName("button").item(21), 'V');}
+			  else if(event.key == "w" && !document.getElementsByTagName("button").item(22).disabled){clicLettre(document.getElementsByTagName("button").item(22), 'W');}
+			  else if(event.key == "x" && !document.getElementsByTagName("button").item(23).disabled){clicLettre(document.getElementsByTagName("button").item(23), 'X');}
+			  else if(event.key == "y" && !document.getElementsByTagName("button").item(24).disabled){clicLettre(document.getElementsByTagName("button").item(24), 'Y');}
+			  else if(event.key == "z" && !document.getElementsByTagName("button").item(25).disabled){clicLettre(document.getElementsByTagName("button").item(25), 'Z');}
+			});
+		</script>
+	</head>
+	<body onload="init()">
+		<h1>Le jeu du Pendu</h1> 
+		<div class="pendu">
+			<img id="pendu" src="../images/p0.gif" alt="pendu" width="400" height="300" /> 
+		</div>
+		<div class="jeu">
+			<span id="jeu">Pendu</span> 
+		</div>
+		<div id="alpha">
+			<button type="button" class="alpha" onclick="clicLettre(this, 'A')">
+				A 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'B')">
+				B 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'C')">
+				C 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'D')">
+				D 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'E')">
+				E 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'F')">
+				F 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'G')">
+				G 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'H')">
+				H 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'I')">
+				I 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'J')">
+				J 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'K')">
+				K 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'L')">
+				L 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'M')">
+				M 
+			</button>
+			<br />
+			<button type="button" class="alpha" onclick="clicLettre(this, 'N')">
+				N 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'O')">
+				O 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'P')">
+				P 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'Q')">
+				Q 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'R')">
+				R 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'S')">
+				S 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'T')">
+				T 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'U')">
+				U 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'V')">
+				V 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'W')">
+				W 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'X')">
+				X 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'Y')">
+				Y 
+			</button>
+			<button type="button" class="alpha" onclick="clicLettre(this, 'Z')">
+				Z 
+			</button>
+		</div>
+		<div id="console">
+		</div>
+		<h3>Règles du jeu : Trouve le mot caché en cliquant sur les lettres ou en appuyant sur les lettres de ton clavier. Attention tu as le droit à 5 erreurs maximum</h3>
+		<div id="controle">
+			<button type="submit" onclick="clicNouvellePartie()">
+				REJOUER
+			</button>
+		</div>
+		
+		
+		<div class="topnav" id="myTopnav">
+			<a href="../index.html">
+				<img class="home" src="../images/home/home.png" onmouseover="this.src='../images/home/homeblack.png'" onmouseout="this.src='../images/home/home.png'"/>
+			</a>
+			<a href="" onclick="normal()">Couleurs normales</a>
+			<a href="" onclick="green()">Couleur Noir/Vert</a>
+			<a href="" onclick="orange()">Couleur Noir/orange</a>
+			<a href="" onclick="pink()">Couleur Rose/Bleu</a>
+		</div>
+		<script>
+			function changeCSS(cssFile) {
+				var oldlink = document.getElementsByTagName("link").item(2);
+				var newlink = document.createElement("link");
+				newlink.setAttribute("rel", "stylesheet");
+				newlink.setAttribute("type", "text/css");
+				newlink.setAttribute("href", "../styles/" + cssFile);
+
+				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			if(document.cookie.split(';')[0] != ""){
+				var color = document.cookie.split(';')[0] + ".css";
+			}else{
+				var color = "none.css"
+			};
+			changeCSS(color);
+			
+			function normal (){
+				document.cookie = "none";
+				changeCSS("none.css");	
+			}
+			function green (){
+				document.cookie = "green"; 
+				changeCSS("green.css");	
+			}
+			function orange (){
+				document.cookie = "orange"; 
+				changeCSS("orange.css");	
+			}
+			function pink (){
+				document.cookie = "pink"; 
+				changeCSS("pink.css");	
+			}
+		</script>
+	</body>
+</html>

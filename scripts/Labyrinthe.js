@@ -63,15 +63,28 @@ Kz.prototype.marquer = function (n) {
 	this.rafraichir();
 };
 
-//============= Kz.tournerPlus =============
-Kz.prototype.tournerPlus = function () {
-	this.direction = (this.direction + 1) % 4;
+//============= Kz.tournerHaut =============
+Kz.prototype.tournerHaut = function () {
+	
+	this.direction = 1;
 	this.rafraichir();
 };
 
-//============= Kz.tournerMoins =============
-Kz.prototype.tournerMoins = function () {
-	this.direction = (this.direction + 3) % 4;
+//============= Kz.tournerBas =============
+Kz.prototype.tournerBas = function () {
+	this.direction = 3;
+	this.rafraichir();
+};
+
+//============= Kz.tournerGauche =============
+Kz.prototype.tournerGauche = function () {
+	this.direction = 2;
+	this.rafraichir();
+};
+
+//============= Kz.tournerDroite =============
+Kz.prototype.tournerDroite = function () {
+	this.direction = 0;
 	this.rafraichir();
 };
 
@@ -316,14 +329,24 @@ Zone.prototype.onAvance = function () {
 	}
 };
 
-//============= Zone.onTournePlus =============
-Zone.prototype.onTournePlus = function () {
-	this.grille[this.liICI][this.coICI].tournerPlus();
+//============= Zone.onTourneHaut =============
+Zone.prototype.onTourne1 = function () {
+	this.grille[this.liICI][this.coICI].tournerHaut();
 };
 
-//============= Zone.onTourneMoins =============
-Zone.prototype.onTourneMoins = function () {
-	this.grille[this.liICI][this.coICI].tournerMoins();
+//============= Zone.onTourneBas =============
+Zone.prototype.onTourne2 = function () {
+	this.grille[this.liICI][this.coICI].tournerBas();
+};
+
+//============= Zone.onTourneGauche =============
+Zone.prototype.onTourne3 = function () {
+	this.grille[this.liICI][this.coICI].tournerGauche();
+};
+
+//============= Zone.onTourneDroite =============
+Zone.prototype.onTourne4 = function () {
+	this.grille[this.liICI][this.coICI].tournerDroite();
 };
 
 //============= Zone.fixerEntree =============

@@ -9,10 +9,12 @@
 		<script src="../scripts/Jeu.js" type="text/javascript" charset="utf-8"></script> 
 		<script>
 		'use strict';
-		document.addEventListener('keypress', (event) => {
-		  if(event.key == "ArrowLeft"){Jeu.clicPlus();}
-		  else if(event.key == "ArrowUp"){Jeu.clicAvancer();}
-		  else if(event.key == "ArrowRight"){Jeu.clicMoins();}
+		document.addEventListener('keydown', (event) => {
+		  if(event.key == "ArrowLeft"){Jeu.clicGauche();}
+		  else if(event.key == "ArrowUp"){Jeu.clicHaut();}
+		  else if(event.key == "ArrowRight"){Jeu.clicDroite();}
+		  else if(event.key == "ArrowDown"){Jeu.clicBas();}
+		  else if(event.key == "Enter"){Jeu.clicAvancer();}
 		});
 		</script>
 	</head>
@@ -25,10 +27,14 @@
 			<h2 id="console"></h2>
 		</div>
 		
-		<h3>Règles du jeu : fait parcourir la flèche du point de départ à l'arrivé en utilisant les boutons (pivoter à gauche, avancer ou pivoter à droite) ou bien en utilisant les flèches directionelles de ton clavier</h3>
+		<h3 id="aCacher">Règles du jeu : fait parcourir la flèche du point de départ à l'arrivé en utilisant les boutons (pivoter à gauche, avancer ou pivoter à droite) ou bien en utilisant les flèches directionelles de ton clavier</h3>
 
-		<div class="controle">
-			<img src="../images/plus.png" onclick="Jeu.clicPlus()" alt="" /><img src="../images/avancer.png" onclick="Jeu.clicAvancer()" alt="" /><img src="../images/moins.png" onclick="Jeu.clicMoins()" alt="" /> 
+		<div id="console2" class="controle">
+			<a><img id="conso" src="../images/console/haut.png" onclick="Jeu.clicHaut()" alt="" /></a>
+			<a><img id="conso" src="../images/console/bas.png" onclick="Jeu.clicBas()" script="cursor:pointer;" alt="" /></a>
+			<a><img id="conso" src="../images/console/ok.png" onclick="Jeu.clicAvancer()" script="cursor:pointer;" alt="" /></a>		
+			<a><img id="conso" src="../images/console/gauche.png" onclick="Jeu.clicGauche()" script="cursor:pointer;" alt="" /></a>
+			<a><img id="conso" src="../images/console/droite.png" onclick="Jeu.clicDroite()" script="cursor:pointer;" alt="" /></a>
 		</div>		
 		<div class="topnav" id="myTopnav">
 			<a href="../index.html">
@@ -50,28 +56,140 @@
 				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 			}
 			
+			function changehome(col) {
+			
+			var oldlinka = document.getElementsByTagName("img").item(5);
+			var newlinka = document.createElement("img");
+			newlinka.setAttribute("classe", "home");
+			if(col == "none.css"){
+				newlinka.setAttribute("src", "../images/home/home.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeblack.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/home.png'");
+			}
+			else if(col == "green.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homegreen.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "orange.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeorange.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "pink.css"){
+				newlinka.setAttribute("src", "../images/home/homeblue.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homepink.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblue.png'");
+			}
+
+			document.getElementsByTagName("a").item(5).replaceChild(newlinka, oldlinka);
+			}
+			
+			function changePicture1(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(0);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Jeu.clicHaut()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/haut"+ colorz +".png");
+				document.getElementsByTagName("a").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture2(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(1);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Jeu.clicBas()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/bas"+ colorz +".png");
+				document.getElementsByTagName("a").item(1).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture3(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(2);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Jeu.clicAvancer()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/ok"+ colorz +".png");
+				document.getElementsByTagName("a").item(2).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture4(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(3);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Jeu.clicGauche()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/gauche"+ colorz +".png");
+				document.getElementsByTagName("a").item(3).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture5(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(4);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Jeu.clicDroite()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/droite"+ colorz +".png");
+				document.getElementsByTagName("a").item(4).replaceChild(newlink, oldlink);
+			}
+			
 			if(document.cookie.split(';')[0] != ""){
 				var color = document.cookie.split(';')[0] + ".css";
+				var col = document.cookie.split(';')[0];
+				if(col == "none"){col = "";}
 			}else{
-				var color = "none.css"
+				var color = "none.css";
+				var col = "";
 			};
 			changeCSS(color);
+			changehome(color);
+			changePicture1(col);
+			changePicture2(col);
+			changePicture3(col);
+			changePicture4(col);
+			changePicture5(col);
 			
 			function normal (){
 				document.cookie = "none";
-				changeCSS("none.css");	
+				changeCSS("none.css");
+				changehome("none.css");
+				changePicture1("");
+				changePicture2("");
+				changePicture3("");
+				changePicture4("");
+				changePicture5("");
 			}
 			function green (){
 				document.cookie = "green"; 
-				changeCSS("green.css");	
+				changeCSS("green.css");
+				changehome("green.css");				
+				changePicture1("green");
+				changePicture2("green");
+				changePicture3("green");
+				changePicture4("green");
+				changePicture5("green");
 			}
 			function orange (){
 				document.cookie = "orange"; 
-				changeCSS("orange.css");	
+				changeCSS("orange.css");
+				changehome("orange.css");
+				changePicture1("orange");
+				changePicture2("orange");
+				changePicture3("orange");
+				changePicture4("orange");
+				changePicture5("orange");				
 			}
 			function pink (){
 				document.cookie = "pink"; 
-				changeCSS("pink.css");	
+				changeCSS("pink.css");
+				changehome("pink.css");
+				changePicture1("pink");
+				changePicture2("pink");
+				changePicture3("pink");
+				changePicture4("pink");
+				changePicture5("pink");				
 			}
 		</script>
 	</body>

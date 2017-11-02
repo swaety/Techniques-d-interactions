@@ -17,8 +17,7 @@
 			<div> 
 				<a href="./html/Labyrinthe.html"><button type="button" class="btn">Labyrinthe <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 				<a href="./html/Pendu.html"><button type="button" class="btn">Le Pendu <span class="glyphicon glyphicon-chevron-right"></span></button></a>
-				<a href="./html/Taquin.html"><button type="button" class="btn">Taquin <span class="glyphicon glyphicon-chevron-right"></span></button></a>
-				<a href="./html/Vortex.html"><button type="button" class="btn">Vortex <span class="glyphicon glyphicon-chevron-right"></span></button></a>
+				<a href="./html/DragMaster.html"><button type="button" class="btn">Drag Master <span class="glyphicon glyphicon-chevron-right"></span></button></a>
 			</div>
 		</div>
 	</div>
@@ -70,7 +69,7 @@
 				newlinka.setAttribute("onmouseout", "this.src='images/home/homeblue.png'");
 			}
 
-			document.getElementsByTagName("body").item(0).replaceChild(newlinka, oldlinka);
+			document.getElementsByTagName("a").item(3).replaceChild(newlinka, oldlinka);
 		}
 		
 		if(document.cookie.split(';')[0] != ""){
@@ -84,19 +83,23 @@
 		
 		function normal (){
 			document.cookie = "none";
-			changeCSS("none.css");	
+			changeCSS("none.css");
+			changehome("none.css");			
 		}
 		function green (){
 			document.cookie = "green"; 
 			changeCSS("green.css");	
+			changehome("green.css");
 		}
 		function orange (){
 			document.cookie = "orange"; 
-			changeCSS("orange.css");	
+			changeCSS("orange.css");
+			changehome("orange.css");			
 		}
 		function pink (){
 			document.cookie = "pink"; 
-			changeCSS("pink.css");	
+			changeCSS("pink.css");
+			changehome("pink.css");
 		}
 	</script>
   </body>

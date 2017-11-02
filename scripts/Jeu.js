@@ -83,7 +83,9 @@ Jeu.debutDePartie = function () {
 
 //================== Jeu.finDePartie ==================
 Jeu.finDePartie = function () {
+	document.getElementById("aCacher").innerHTML = "";
 	document.getElementById("console").innerHTML = "BRAVO ! Tu as trouvé la sortie";
+	document.getElementById("console2").innerHTML = "<button id=\"replay\" type=\"submit\" onclick=\'window.location.reload(false)\'>REJOUER</button>";
 };
 
 //================== Jeu.avancerVersSortie ==================
@@ -129,17 +131,30 @@ Jeu.clicAvancer = function () {
 	}
 };	
 
-//================== Jeu.clicPlus ==================
-Jeu.clicPlus = function () {
-	console.log("clic plus");
-	Jeu.zone.onTournePlus();
+//================== Jeu.clicHaut ==================
+Jeu.clicHaut = function () {
+	console.log("clic haut");
+	Jeu.zone.onTourne1();
 	
 };
 
-//================== Jeu.clicMoins ==================
-Jeu.clicMoins = function () {
-	console.log("clic moins");
-	Jeu.zone.onTourneMoins();
+//================== Jeu.clicBas ==================
+Jeu.clicBas = function () {
+	console.log("clic bas");
+	Jeu.zone.onTourne2();
+};
+
+//================== Jeu.clicGauche ==================
+Jeu.clicGauche = function () {
+	console.log("clic gauche");
+	Jeu.zone.onTourne3();
+	
+};
+
+//================== Jeu.clicDroite ==================
+Jeu.clicDroite = function () {
+	console.log("clic droite");
+	Jeu.zone.onTourne4();
 };
 
 //================== Initialisation du Jeu ==================

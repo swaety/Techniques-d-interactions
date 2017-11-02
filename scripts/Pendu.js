@@ -2,13 +2,116 @@
 
 // définition des couleurs de fond #Fx0
 var fond = ["F", "D", "C", "9", "6", "3", "0"];
-
+var letter;
 var dom_body, dom_aide, dom_btnaide, dom_pendu, dom_console, dom_jeu, dom_controle, motSecret, motVisible, numeroPendu, cFini, lettresVues, nombreDErrreurs, numeroTest, nombreDeLettres, nombreDeMots, victoire;
 
 //================== effacerElement ==================
 function effacerElement(dom) {
 	while (dom.firstChild) {
 		dom.removeChild(dom.firstChild);
+	}
+}
+
+function letterToInt(lett){
+	var k = 0;
+	if(lett == "A"){k = 1; return k;}
+	else if(lett == "B"){k = 2; return k;}
+	else if(lett == "C"){k = 3; return k;}
+	else if(lett == "D"){k = 4; return k;}
+	else if(lett == "E"){k = 5; return k;}
+	else if(lett == "F"){k = 6; return k;}
+	else if(lett == "G"){k = 7; return k;}
+	else if(lett == "H"){k = 8; return k;}
+	else if(lett == "I"){k = 9; return k;}
+	else if(lett == "J"){k = 10; return k;}
+	else if(lett == "K"){k = 11; return k;}
+	else if(lett == "L"){k = 12; return k;}
+	else if(lett == "M"){k = 13; return k;}
+	else if(lett == "N"){k = 14; return k;}
+	else if(lett == "O"){k = 15; return k;}
+	else if(lett == "P"){k = 16; return k;}
+	else if(lett == "Q"){k = 17; return k;}
+	else if(lett == "R"){k = 18; return k;}
+	else if(lett == "S"){k = 19; return k;}
+	else if(lett == "T"){k = 20; return k;}
+	else if(lett == "U"){k = 21; return k;}
+	else if(lett == "V"){k = 22; return k;}
+	else if(lett == "W"){k = 23; return k;}
+	else if(lett == "X"){k = 24; return k;}
+	else if(lett == "Y"){k = 25; return k;}
+	else if(lett == "Z"){k = 26; return k;}
+}
+
+function IntToLetter(enti){
+	var lett = "";
+	if(enti == 1){lett = "A"; return lett;}
+	else if(enti == 2){lett = "B"; return lett;}
+	else if(enti == 3){lett = "C"; return lett;}
+	else if(enti == 4){lett = "D"; return lett;}
+	else if(enti == 5){lett = "E"; return lett;}
+	else if(enti == 6){lett = "F"; return lett;}
+	else if(enti == 7){lett = "G"; return lett;}
+	else if(enti == 8){lett = "H"; return lett;}
+	else if(enti == 9){lett = "I"; return lett;}
+	else if(enti == 10){lett = "J"; return lett;}
+	else if(enti == 11){lett = "K"; return lett;}
+	else if(enti == 12){lett = "L"; return lett;}
+	else if(enti == 13){lett = "M"; return lett;}
+	else if(enti == 14){lett = "N"; return lett;}
+	else if(enti == 15){lett = "O"; return lett;}
+	else if(enti == 16){lett = "P"; return lett;}
+	else if(enti == 17){lett = "Q"; return lett;}
+	else if(enti == 18){lett = "R"; return lett;}
+	else if(enti == 19){lett = "S"; return lett;}
+	else if(enti == 20){lett = "T"; return lett;}
+	else if(enti == 21){lett = "U"; return lett;}
+	else if(enti == 22){lett = "V"; return lett;}
+	else if(enti == 23){lett = "W"; return lett;}
+	else if(enti == 24){lett = "X"; return lett;}
+	else if(enti == 25){lett = "Y"; return lett;}
+	else if(enti == 26){lett = "Z"; return lett;}
+}
+
+function setBorder(direction){
+	letter = document.getElementsByClassName("selected")[0].id;
+	var k = letterToInt(letter);
+	if(direction == "ArrowRight"){
+		if(k<26){
+			document.getElementsByClassName("selected")[0].className = document.getElementsByClassName("selected")[0].className.replace("selected","");
+			
+				k = k+1;
+				letter = IntToLetter(k);
+				document.getElementById(letter).className += " selected";
+		}
+		else{}
+	}
+	else if(direction == "ArrowLeft"){
+		if(k>1){
+			document.getElementsByClassName("selected")[0].className = document.getElementsByClassName("selected")[0].className.replace("selected","");
+			
+				k = k-1;
+				letter = IntToLetter(k);
+				document.getElementById(letter).className += " selected";
+		}
+		else{}
+	}
+	else if(direction == "ArrowUp"){
+		if(k>13){
+			document.getElementsByClassName("selected")[0].className = document.getElementsByClassName("selected")[0].className.replace("selected","");
+				k = k-13;
+				letter = IntToLetter(k);
+				document.getElementById(letter).className += " selected";
+		}
+		else{}
+	}
+	else if(direction == "ArrowDown"){
+		if(k<14){
+			document.getElementsByClassName("selected")[0].className = document.getElementsByClassName("selected")[0].className.replace("selected","");
+				k = k+13;
+				letter = IntToLetter(k);
+				document.getElementById(letter).className += " selected";
+		}
+		else{}
 	}
 }
 
@@ -29,7 +132,8 @@ function actualiserPendu() {
 
 //================== remiseAZero ==================
 function remiseAZero() {
-	var k, c;
+	var k, c, i;
+	i=0;
 	cFini = false;
 	dom_controle.className = "invisible";
 	lettresVues = 0;
@@ -37,6 +141,9 @@ function remiseAZero() {
 	numeroTest = 0;
 	numeroPendu = 0;
 	actualiserPendu();
+	for(i; i<26; i++){
+		document.getElementsByTagName("button").item(i).style.opacity = 1;
+	}
 	var btns = document.getElementsByTagName("button");
 	for (k = 0; k < btns.length; k++) {
 		btns[k].disabled = false;
@@ -102,6 +209,7 @@ function clicLettre(obj, lettre) {
 	var motNouveau = "";
 	var ok = false;
 	numeroTest++;
+	document.getElementById(lettre).style.opacity = 0.5;
 	for (k = 0; k < nombreDeLettres; k++) {
 		cs = motSecret.charAt(k);
 		cv = motVisible.charAt(k);
@@ -143,6 +251,7 @@ function clicLettre(obj, lettre) {
 function clicNouvellePartie() {
 	afficherSurConsole("À vous de jouer . . .");
 	remiseAZero();
+	location.reload(); 
 }
 
 //================== init ==================

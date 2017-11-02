@@ -4,6 +4,18 @@
   --couleurWhitePenduFond: white;
 }
 
+.selected{
+	border: red solid 3px;
+}
+
+#conso{
+	border: solid var(--couleurBlackPen) 1px;
+}
+
+a:hover {
+		cursor: pointer;
+}
+
 body { 
 	min-width: 800px; 
 	color: var(--couleurBlackTaq);

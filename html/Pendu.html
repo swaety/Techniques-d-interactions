@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="../styles/none.css">
 		<script src="../scripts/Dico.js" type="text/javascript" charset="utf-8"></script> 
 		<script src="../scripts/Pendu.js" type="text/javascript" charset="utf-8"></script> 
-		<script>
+		<!--<script>
 			'use strict';
 			document.addEventListener('keypress', (event) => {
 			  if(event.key == "a" && !document.getElementsByTagName("button").item(0).disabled){clicLettre( document.getElementsByTagName("button").item(0), 'A'); }  
@@ -37,6 +37,23 @@
 			  else if(event.key == "y" && !document.getElementsByTagName("button").item(24).disabled){clicLettre(document.getElementsByTagName("button").item(24), 'Y');}
 			  else if(event.key == "z" && !document.getElementsByTagName("button").item(25).disabled){clicLettre(document.getElementsByTagName("button").item(25), 'Z');}
 			});
+		</script>-->
+		
+		<script>
+		'use strict';
+		document.addEventListener('keydown', (event) => {
+			if(event.key == "ArrowLeft"){setBorder(event.key);}
+			else if(event.key == "ArrowUp"){setBorder(event.key);}
+			else if(event.key == "ArrowRight"){setBorder(event.key);}
+			else if(event.key == "ArrowDown"){setBorder(event.key);}
+			else if(event.key == "Enter" && !document.getElementsByClassName("selected")[0].disabled){clicLettre(document.getElementsByClassName("selected")[0], document.getElementsByClassName("selected")[0].id);}
+		});
+		
+		function currentClick(){
+			if(!document.getElementsByClassName("selected")[0].disabled){
+				clicLettre(document.getElementsByClassName("selected")[0], document.getElementsByClassName("selected")[0].id);
+			}
+		}
 		</script>
 	</head>
 	<body onload="init()">
@@ -48,89 +65,94 @@
 			<span id="jeu">Pendu</span> 
 		</div>
 		<div id="alpha">
-			<button type="button" class="alpha" onclick="clicLettre(this, 'A')">
+			<button id="A" type="button" class="alpha selected" onclick="clicLettre(this, 'A')">
 				A 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'B')">
+			<button id="B" type="button" class="alpha" onclick="clicLettre(this, 'B')">
 				B 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'C')">
+			<button id="C" type="button" class="alpha" onclick="clicLettre(this, 'C')">
 				C 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'D')">
+			<button id="D" type="button" class="alpha" onclick="clicLettre(this, 'D')">
 				D 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'E')">
+			<button id="E" type="button" class="alpha" onclick="clicLettre(this, 'E')">
 				E 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'F')">
+			<button id="F" type="button" class="alpha" onclick="clicLettre(this, 'F')">
 				F 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'G')">
+			<button id="G" type="button" class="alpha" onclick="clicLettre(this, 'G')">
 				G 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'H')">
+			<button id="H" type="button" class="alpha" onclick="clicLettre(this, 'H')">
 				H 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'I')">
+			<button id="I" type="button" class="alpha" onclick="clicLettre(this, 'I')">
 				I 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'J')">
+			<button id="J" type="button" class="alpha" onclick="clicLettre(this, 'J')">
 				J 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'K')">
+			<button id="K" type="button" class="alpha" onclick="clicLettre(this, 'K')">
 				K 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'L')">
+			<button id="L" type="button" class="alpha" onclick="clicLettre(this, 'L')">
 				L 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'M')">
+			<button id="M" type="button" class="alpha" onclick="clicLettre(this, 'M')">
 				M 
 			</button>
 			<br />
-			<button type="button" class="alpha" onclick="clicLettre(this, 'N')">
+			<button id="N" type="button" class="alpha" onclick="clicLettre(this, 'N')">
 				N 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'O')">
+			<button id="O" type="button" class="alpha" onclick="clicLettre(this, 'O')">
 				O 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'P')">
+			<button id="P" type="button" class="alpha" onclick="clicLettre(this, 'P')">
 				P 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'Q')">
+			<button id="Q" type="button" class="alpha" onclick="clicLettre(this, 'Q')">
 				Q 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'R')">
+			<button id="R" type="button" class="alpha" onclick="clicLettre(this, 'R')">
 				R 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'S')">
+			<button id="S" type="button" class="alpha" onclick="clicLettre(this, 'S')">
 				S 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'T')">
+			<button id="T" type="button" class="alpha" onclick="clicLettre(this, 'T')">
 				T 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'U')">
+			<button id="U" type="button" class="alpha" onclick="clicLettre(this, 'U')">
 				U 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'V')">
+			<button id="V" type="button" class="alpha" onclick="clicLettre(this, 'V')">
 				V 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'W')">
+			<button id="W" type="button" class="alpha" onclick="clicLettre(this, 'W')">
 				W 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'X')">
+			<button id="X" type="button" class="alpha" onclick="clicLettre(this, 'X')">
 				X 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'Y')">
+			<button id="Y" type="button" class="alpha" onclick="clicLettre(this, 'Y')">
 				Y 
 			</button>
-			<button type="button" class="alpha" onclick="clicLettre(this, 'Z')">
+			<button id="Z" type="button" class="alpha" onclick="clicLettre(this, 'Z')">
 				Z 
 			</button>
 		</div>
 		<div id="console">
 		</div>
 		<h3>Règles du jeu : Trouve le mot caché en cliquant sur les lettres ou en appuyant sur les lettres de ton clavier. Attention tu as le droit à 5 erreurs maximum</h3>
+		<a><img id="conso" src="../images/console/haut.png" onclick="setBorder('ArrowUp');" alt="" /></a>
+			<a><img id="conso" src="../images/console/bas.png" onclick="setBorder('ArrowDown');" script="cursor:pointer;" alt="" /></a>
+			<a><img id="conso" src="../images/console/ok.png" onclick="currentClick()" script="cursor:pointer;" alt="" /></a>		
+			<a><img id="conso" src="../images/console/gauche.png" onclick="setBorder('ArrowLeft');" script="cursor:pointer;" alt="" /></a>
+			<a><img id="conso" src="../images/console/droite.png" onclick="setBorder('ArrowRight');" script="cursor:pointer;" alt="" /></a>
 		<div id="controle">
 			<button type="submit" onclick="clicNouvellePartie()">
 				REJOUER
@@ -158,28 +180,140 @@
 				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
 			}
 			
+			function changehome(col) {
+			
+			var oldlinka = document.getElementsByTagName("img").item(6);
+			var newlinka = document.createElement("img");
+			newlinka.setAttribute("classe", "home");
+			if(col == "none.css"){
+				newlinka.setAttribute("src", "../images/home/home.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeblack.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/home.png'");
+			}
+			else if(col == "green.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homegreen.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "orange.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeorange.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "pink.css"){
+				newlinka.setAttribute("src", "../images/home/homeblue.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homepink.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblue.png'");
+			}
+
+			document.getElementsByTagName("a").item(5).replaceChild(newlinka, oldlinka);
+			}
+			
+			function changePicture1(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(1);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "setBorder('ArrowUp')");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/haut"+ colorz +".png");
+				document.getElementsByTagName("a").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture2(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(2);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "setBorder('ArrowDown')");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/bas"+ colorz +".png");
+				document.getElementsByTagName("a").item(1).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture3(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(3);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "currentClick()");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/ok"+ colorz +".png");
+				document.getElementsByTagName("a").item(2).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture4(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(4);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "setBorder('ArrowLeft')");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/gauche"+ colorz +".png");
+				document.getElementsByTagName("a").item(3).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture5(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(5);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "setBorder('ArrowRight')");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/droite"+ colorz +".png");
+				document.getElementsByTagName("a").item(4).replaceChild(newlink, oldlink);
+			}
+			
 			if(document.cookie.split(';')[0] != ""){
 				var color = document.cookie.split(';')[0] + ".css";
+				var col = document.cookie.split(';')[0];
+				if(col == "none"){col = "";}
 			}else{
-				var color = "none.css"
+				var color = "none.css";
+				var col = "";
 			};
 			changeCSS(color);
+			changehome(color);
+			changePicture1(col);
+			changePicture2(col);
+			changePicture3(col);
+			changePicture4(col);
+			changePicture5(col);
 			
 			function normal (){
 				document.cookie = "none";
-				changeCSS("none.css");	
+				changeCSS("none.css");
+				changehome("none.css");
+				changePicture1("");
+				changePicture2("");
+				changePicture3("");
+				changePicture4("");
+				changePicture5("");
 			}
 			function green (){
 				document.cookie = "green"; 
 				changeCSS("green.css");	
+				changehome("green.css");
+				changePicture1("green");
+				changePicture2("green");
+				changePicture3("green");
+				changePicture4("green");
+				changePicture5("green");
 			}
 			function orange (){
 				document.cookie = "orange"; 
-				changeCSS("orange.css");	
+				changeCSS("orange.css");
+				changehome("orange.css");
+				changePicture1("orange");
+				changePicture2("orange");
+				changePicture3("orange");
+				changePicture4("orange");
+				changePicture5("orange");				
 			}
 			function pink (){
 				document.cookie = "pink"; 
-				changeCSS("pink.css");	
+				changeCSS("pink.css");
+				changehome("pink.css");
+				changePicture1("pink");
+				changePicture2("pink");
+				changePicture3("pink");
+				changePicture4("pink");
+				changePicture5("pink");				
 			}
 		</script>
 	</body>

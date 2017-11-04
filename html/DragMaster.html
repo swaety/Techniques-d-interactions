@@ -1,0 +1,237 @@
+<html>
+<head>
+        <link href='../styles/DragMaster.css' rel='stylesheet' type='text/css' />
+        <script src='../scripts/DragMaster.js'></script>
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/none.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+       <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="bootstrap-overrides">
+
+<div style="text-align:center"> <h2> Classez les marques suivantes : </h2> </div>
+
+<div class="container" id ="motherOfDivs">
+                <div class="row">
+                                <div id="score" class="col-sm-push-1"> <h3>   Votre score est : </h3> </div></div>
+<div class="row">
+        
+        <div id="div-up"  class="col-sm-2 col-sm-push-2 MyBox list-type4">
+                        <label for="div-up">Vetements</label>
+                <ol id="ol-up">
+                       
+                </ol>
+        </div>
+        <div id=" arrows " style="margin-top:30px;" class="col-sm-4 col-sm-push-6 ">
+                       <label>Directions : </label></br>
+                       <a><img src="../images/console/gauche.png" id="conso" alt="left" onclick="Mykeypress(37);"></a>
+                       <a> <img src="../images/console/droite.png" id="conso"  alt="right" onclick="Mykeypress(39);"></a>
+                       <a> <img src="../images/console/haut.png" id="conso"  alt="up" onclick="Mykeypress(38);"></a>
+                       <a> <img src="../images/console/bas.png" id="conso"  alt="down" onclick="Mykeypress(40);"></a>
+                       <a> <img src="../images/console/ok.png" id="conso"  alt="ok" onclick="Mykeypress(13);"></a>
+                        
+         </div>
+</div>
+
+<div class="row" >
+    <div class="list-type4 col-sm-2 MyBox " id="div-right">
+     <label for="div-right">Voitures</label>
+            <ol id="ol-right">
+                   
+            </ol>
+    </div> 
+    <div class="list-type4 col-sm-2  " id="div-center">
+                
+            <ol id="ol-center">
+
+               
+
+            </ol>
+    </div>
+    <div class="list-type4 col-sm-2 MyBox "  id="div-left">
+                <label for="div-left">Smartphones</label>
+            <ol id="ol-left">
+                    
+            </ol>
+    </div>
+</div>
+
+<div class="row">
+        <div id="div-down" class="col-sm-2 col-sm-push-2 MyBox list-type4">
+                        <label for="div-down">Chocalaterie</label>
+                <ol id="ol-down">
+                       
+                </ol>
+        </div>
+</div>
+</div>
+
+<div class="topnav" id="myTopnav">
+                <a href="../index.html">
+                        <img class="home" src="../images/home/home.png" onmouseover="this.src='../images/home/homeblack.png'" onmouseout="this.src='../images/home/home.png'"/>
+                </a>
+                <a href="" onclick="normal()">Couleurs normales</a>
+                <a href="" onclick="green()">Couleur Noir/Vert</a>
+                <a href="" onclick="orange()">Couleur Noir/orange</a>
+                <a href="" onclick="pink()">Couleur Rose/Bleu</a>
+ </div>
+
+
+ <script>
+			function changeCSS(cssFile) {
+				var oldlink = document.getElementsByTagName("link").item(2);
+				var newlink = document.createElement("link");
+				newlink.setAttribute("rel", "stylesheet");
+				newlink.setAttribute("type", "text/css");
+				newlink.setAttribute("href", "../styles/" + cssFile);
+
+				document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			function changehome(col) {
+			
+			var oldlinka = document.getElementsByTagName("img").item(5);
+			var newlinka = document.createElement("img");
+			newlinka.setAttribute("classe", "home");
+			if(col == "none.css"){
+				newlinka.setAttribute("src", "../images/home/home.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeblack.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/home.png'");
+			}
+			else if(col == "green.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homegreen.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "orange.css"){
+				newlinka.setAttribute("src", "../images/home/homeblack.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homeorange.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblack.png'");
+			}
+			else if(col == "pink.css"){
+				newlinka.setAttribute("src", "../images/home/homeblue.png");
+				newlinka.setAttribute("onmouseover", "this.src='../images/home/homepink.png'");
+				newlinka.setAttribute("onmouseout", "this.src='../images/home/homeblue.png'");
+			}
+
+			document.getElementsByTagName("a").item(5).replaceChild(newlinka, oldlinka);
+			}
+			
+			function changePicture1(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(0);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Mykeypress(38)");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/haut"+ colorz +".png");
+				document.getElementsByTagName("a").item(0).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture2(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(1);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Mykeypress(40)");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/bas"+ colorz +".png");
+				document.getElementsByTagName("a").item(1).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture3(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(2);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Mykeypress(13)");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/ok"+ colorz +".png");
+				document.getElementsByTagName("a").item(2).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture4(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(3);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Mykeypress(37)");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/gauche"+ colorz +".png");
+				document.getElementsByTagName("a").item(3).replaceChild(newlink, oldlink);
+			}
+			
+			function changePicture5(colorz) {
+				var oldlink = document.getElementsByTagName("img").item(4);
+				var newlink = document.createElement("img");
+				newlink.setAttribute("id", "conso");
+				newlink.setAttribute("onclick", "Mykeypress(39)");
+				newlink.setAttribute("alt", "");
+				newlink.setAttribute("src", "../images/console/droite"+ colorz +".png");
+				document.getElementsByTagName("a").item(4).replaceChild(newlink, oldlink);
+			}
+			
+			if(document.cookie.split(';')[0] != ""){
+				var color = document.cookie.split(';')[0] + ".css";
+				var col = document.cookie.split(';')[0];
+				if(col == "none"){col = "";}
+			}else{
+				var color = "none.css";
+				var col = "";
+			};
+			changeCSS(color);
+			changehome(color);
+			changePicture1(col);
+			changePicture2(col);
+			changePicture3(col);
+			changePicture4(col);
+			changePicture5(col);
+			
+			function normal (){
+				document.cookie = "none";
+				changeCSS("none.css");
+				changehome("none.css");
+				changePicture1("");
+				changePicture2("");
+				changePicture3("");
+				changePicture4("");
+				changePicture5("");
+			}
+			function green (){
+				document.cookie = "green"; 
+				changeCSS("green.css");
+				changehome("green.css");				
+				changePicture1("green");
+				changePicture2("green");
+				changePicture3("green");
+				changePicture4("green");
+				changePicture5("green");
+			}
+			function orange (){
+				document.cookie = "orange"; 
+				changeCSS("orange.css");
+				changehome("orange.css");
+				changePicture1("orange");
+				changePicture2("orange");
+				changePicture3("orange");
+				changePicture4("orange");
+				changePicture5("orange");				
+			}
+			function pink (){
+				document.cookie = "pink"; 
+				changeCSS("pink.css");
+				changehome("pink.css");
+				changePicture1("pink");
+				changePicture2("pink");
+				changePicture3("pink");
+				changePicture4("pink");
+				changePicture5("pink");				
+			}
+		</script>  
+
+
+
+</body>
+
+</html>

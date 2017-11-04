@@ -57,3 +57,29 @@ body {
 	background-color: var(--couleurWhite);
 	color: var(--couleurBlack);
 }
+
+#bootstrap-overrides {
+	
+		margin: 10px 0 ;
+		padding: 0 ;
+		text-align: center ;
+		font:  "Trebuchet MS", helvetica, sans-serif ;
+		height: 70%;
+		background-color: var(--couleurWhite);
+		color: var(--couleurBlack)
+	
+	}
+
+.list-type4 a{
+		position: relative;
+		display: block;
+		padding: .2em .2em .2em 2em;
+		*padding: .2em;
+		margin: .2em 0;
+		background: #5975D9;
+		color: var(--couleurBlack) ;
+		text-decoration: none;
+		box-shadow:inset 0.5em 0 black;
+		-webkit-transition: box-shadow 1s; /* For Safari 3.1 to 6.0 */
+		transition: box-shadow 1s;
+		}

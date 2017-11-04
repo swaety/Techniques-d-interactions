@@ -1,0 +1,49 @@
+
+   .list-type4{
+    width:20px;
+    margin:0 auto;
+    }
+    
+    .list-type4 ol{
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    
+    
+    }
+    .list-type4 a{
+    position: relative;
+    display: block;
+    padding: .2em .2em .2em 2em;
+    *padding: .2em;
+    margin: .2em 0;
+    background: #5975D9;
+    color: white;
+    text-decoration: none;
+    box-shadow:inset 0.5em 0 black;
+    -webkit-transition: box-shadow 1s; /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 1s;
+    }
+    
+    .list-type4 a:hover{
+    box-shadow:inset 2em 0 black;
+    }
+    #bootstrap-overrides .MyBox {
+        min-height: 50px;
+        margin-top: 2em;
+        margin-bottom: 5em;
+        background: #c2b7b7;
+      }
+      #arrows {
+        position: fixed;
+        margin-left: 500px;
+        margin-top: 60%;
+      }
+      #bootstrap-overrides .motherOfDivs {
+       width: 800px;
+      }
+     
+ 

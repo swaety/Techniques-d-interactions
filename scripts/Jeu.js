@@ -6,6 +6,8 @@ var Jeu = {};
 Jeu.li = 7;
 Jeu.co = 11;
 
+var nberror = 0;
+
 //================== Services ==================
 //================== Jeu.effacer ==================
 Jeu.effacer = function (pere) { // PUBLIC
@@ -124,7 +126,11 @@ Jeu.clicSolution = function () {
 Jeu.clicAvancer = function () {
 	console.log("clic avancer");
 	if (!Jeu.zone.onAvance()) {
-
+		nberror = nberror + 1;
+		var msg = "Nombre d'erreur(s) : " + nberror;
+		document.getElementById("erro").innerHTML = msg;
+		//Jeu.fondDeCouleur("rouge");
+		//setTimeout(Jeu.fondDeCouleur, 500);
 	}
 	if (Jeu.zone.sortieAtteinte()) {
 		Jeu.finDePartie();
@@ -167,6 +173,7 @@ Jeu.initJeu = function () {
 
 //================== Jeu.init ==================
 Jeu.init = function () {
+	nberror = 0;
 	// le corps du document
 	Jeu.dom_body = document.getElementsByTagName('body')[0];
 	// zone d'affichage de l'aide (bouton aide au départ)

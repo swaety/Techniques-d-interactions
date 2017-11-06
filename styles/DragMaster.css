@@ -1,3 +1,6 @@
+:root { 
+  --couleurBlackLab: Black; 
+}
 
    .list-type4{
     width:20px;
@@ -45,5 +48,13 @@
       #bootstrap-overrides .motherOfDivs {
        width: 800px;
       }
+	  
+	#conso{
+		border: solid var(--couleurBlackLab) 1px;
+	}
+	
+	a:hover {
+		cursor: pointer;
+	}
      
  

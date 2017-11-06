@@ -1,12 +1,12 @@
 
 
-map_categories = {"voitures": ["Renault", "Wolkswagen","Peugeot","Citroen"], "alimentaire": ["nutella", "nestle"],
+map_categories = {"voitures": ["Renault", "Volkswagen","Peugeot","Citroen"], "alimentaire": ["nutella", "nestle"],
  "vetements": ["zara", "celio"], "smartphone": ["iphone", "galaxy"]}
  var dictionary = [
     
-    { key: '2', value: 'Wolkswagen' },
-    { key: '18', value: 'ALTICE' },
-    { key: '19', value: 'APPLE' },
+    { key: '2', value: 'Volkswagen' },
+    { key: '18', value: 'HTC' },
+    { key: '19', value: 'Apple' },
     { key: '3', value: 'Peugeot' },
     { key: '14', value: 'Tom & Pilou ' },
     { key: '15', value: 'Poulain' },
@@ -17,11 +17,11 @@ map_categories = {"voitures": ["Renault", "Wolkswagen","Peugeot","Citroen"], "al
     { key: '6', value: 'Zara' },
     { key: '13', value: 'Suchard' },
     { key: '1', value: 'Renault' },
-    { key: '16', value: 'ACER' },
-    { key: '17', value: 'ALCATEL' },
+    { key: '16', value: 'Acer' },
+    { key: '17', value: 'Alcatel' },
     { key: '7', value: 'Celio' },
     { key: '12', value: 'Rik & Rok' },
-    { key: '20', value: 'ARCHOS' },
+    { key: '20', value: 'Archos' },
     { key: '9', value: 'Channel' },
     { key: '10', value: 'Nutella' }
     

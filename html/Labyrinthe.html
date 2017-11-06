@@ -26,7 +26,7 @@
 		<div class="console">
 			<h2 id="console"></h2>
 		</div>
-		
+		<h3 id="erro">Nombre d'erreur(s) : 0</h3>
 		<h3 id="aCacher">Règles du jeu : fait parcourir la flèche du point de départ à l'arrivé en utilisant les boutons (pivoter à gauche, avancer ou pivoter à droite) ou bien en utilisant les flèches directionelles de ton clavier</h3>
 
 		<div id="console2" class="controle">
@@ -46,6 +46,8 @@
 			<a href="" onclick="pink()">Couleur Rose/Bleu</a>
 		</div>
 		<script>
+		var col = null;
+		
 			function changeCSS(cssFile) {
 				var oldlink = document.getElementsByTagName("link").item(2);
 				var newlink = document.createElement("link");
@@ -136,12 +138,14 @@
 			}
 			
 			if(document.cookie.split(';')[0] != ""){
+				console.log("cookie non vide");
+				console.log(document.cookie.split(';')[0]);
 				var color = document.cookie.split(';')[0] + ".css";
-				var col = document.cookie.split(';')[0];
+				col = document.cookie.split(';')[0];
 				if(col == "none"){col = "";}
 			}else{
 				var color = "none.css";
-				var col = "";
+				col = "";
 			};
 			changeCSS(color);
 			changehome(color);

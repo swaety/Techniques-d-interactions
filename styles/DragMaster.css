@@ -20,6 +20,18 @@ a:hover {
   clear: both;
 }
 
+button[type=submit] {
+    width: 300px;
+	height: 100px;
+    background-color: var(--couleurBlackDrag);
+    color: var(--couleurWhiteDrag);
+    padding: 10px 10px;
+	position: relative;
+    border: solid var(--couleurBlackDrag) 2px;
+    cursor: pointer;
+	font-size: 40px;
+}
+
 #ol-center{
 	background-color: var(--couleurGreyDrag);
 	color: var(--couleurWhiteDrag);

@@ -104,189 +104,94 @@ else if(random == 4){
 
 function Right() {
 			
-            left = true ;
-			right = false;
-			up = false;
-			down = false;
-			
-            counter ++ ;
-            var listItemLeft = document.createElement("li");
-            listItemLeft.innerHTML = listItemCenter.innerHTML  ;
-            listItemLeft.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olLeft.appendChild(listItemLeft);
-            if((listItemLeft.getAttribute("id")>10)&&(listItemLeft.getAttribute("id")<21))
-            {
-                score ++ ;
-                console.log(score);
-            }
+	left = true ;
+	right = false;
+	up = false;
+	down = false;
+	
+	counter ++ ;
+	var listItemLeft = document.createElement("li");
+	listItemLeft.innerHTML = listItemCenter.innerHTML  ;
+	listItemLeft.setAttribute("id",listItemCenter.getAttribute("id"));
+	olCenter.removeChild(listItemCenter);
+	olLeft.appendChild(listItemLeft);
+	if((listItemLeft.getAttribute("id")>10)&&(listItemLeft.getAttribute("id")<21))
+	{
+		score ++ ;
+		console.log(score);
+	}
 
-        }
-		
-		function Left() {
-			
-            right= true;
-			left = false ;
-			up = false;
-			down = false;
-            counter ++ ;
-			
-            var listItemRight = document.createElement("li");
-            listItemRight.innerHTML = listItemCenter.innerHTML  ;
-            listItemRight.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olRight.appendChild(listItemRight);
-            if((listItemRight.getAttribute("id")>30)&&(listItemRight.getAttribute("id")<41))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-       function Up() {
-            up= true;
-			down = false;
-			right= false;
-			left = false ;
-            counter ++ ;
-            var listItemUp = document.createElement("li");
-            listItemUp.innerHTML = listItemCenter.innerHTML  ;
-            listItemUp.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olUp.appendChild(listItemUp);
-            if((listItemUp.getAttribute("id")>0)&&(listItemUp.getAttribute("id")<11))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-        function Down() {
-            down = true;
-			right= false;
-			left = false ;
-			up = false;
-            counter ++ ;
-            var listItemDown = document.createElement("li");
-            listItemDown.innerHTML = listItemCenter.innerHTML  ;
-            listItemDown.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olDown.appendChild(listItemDown);
-            if((listItemDown.getAttribute("id")>20)&&(listItemDown.getAttribute("id")<31))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-		function Enter() {
-			if (((down == true )||(up == true )||(right == true )||(left == true ))){
-				if(currentWord != partie){
-					divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
-					listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
-					listItemCenter.setAttribute("id",dictionary[counter].key);
-					olCenter.appendChild(listItemCenter);
-					currentWord ++
-				}
-				else if(currentWord == partie){
-					divScore.innerHTML = "<h3>La partie est terminée, vous avez marqués "+score+" points !</h3>"
-				}
-			}
+}
+
+function Left() {
+	
+	right= true;
+	left = false ;
+	up = false;
+	down = false;
+	counter ++ ;
+	
+	var listItemRight = document.createElement("li");
+	listItemRight.innerHTML = listItemCenter.innerHTML  ;
+	listItemRight.setAttribute("id",listItemCenter.getAttribute("id"));
+	olCenter.removeChild(listItemCenter);
+	olRight.appendChild(listItemRight);
+	if((listItemRight.getAttribute("id")>30)&&(listItemRight.getAttribute("id")<41))
+	{
+		score ++ ;
+		console.log(score);
+	}
+}
+function Up() {
+	up= true;
+	down = false;
+	right= false;
+	left = false ;
+	counter ++ ;
+	var listItemUp = document.createElement("li");
+	listItemUp.innerHTML = listItemCenter.innerHTML  ;
+	listItemUp.setAttribute("id",listItemCenter.getAttribute("id"));
+	olCenter.removeChild(listItemCenter);
+	olUp.appendChild(listItemUp);
+	if((listItemUp.getAttribute("id")>0)&&(listItemUp.getAttribute("id")<11))
+	{
+		score ++ ;
+		console.log(score);
+	}
+}
+function Down() {
+	down = true;
+	right= false;
+	left = false ;
+	up = false;
+	counter ++ ;
+	var listItemDown = document.createElement("li");
+	listItemDown.innerHTML = listItemCenter.innerHTML  ;
+	listItemDown.setAttribute("id",listItemCenter.getAttribute("id"));
+	olCenter.removeChild(listItemCenter);
+	olDown.appendChild(listItemDown);
+	if((listItemDown.getAttribute("id")>20)&&(listItemDown.getAttribute("id")<31))
+	{
+		score ++ ;
+		console.log(score);
+	}
+}
+function Enter() {
+	if (((down == true )||(up == true )||(right == true )||(left == true ))){
+		if(currentWord != partie){
+			divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
+			listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
+			listItemCenter.setAttribute("id",dictionary[counter].key);
+			olCenter.appendChild(listItemCenter);
+			currentWord ++
 		}
+		else if(currentWord == partie){
+			divScore.innerHTML = "<h3>La partie est terminée, vous avez marqués "+score+" points !</h3><button type=\"submit\" onclick=\"clicNouvellePartie()\">REJOUER</button>"
+		}
+	}
+}
 
-
-    
-    
- 
-    
-
-    /*window.onkeydown = function(e) {
-        var key = e.keyCode ? e.keyCode : e.which;
-        console.log(e.which);
-        console.log(e.keyCode);
-        if (key == 39) {
-			
-            left = true ;
-			right = false;
-			up = false;
-			down = false;
-			
-            counter ++ ;
-            var listItemLeft = document.createElement("li");
-            listItemLeft.innerHTML = listItemCenter.innerHTML  ;
-            listItemLeft.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olLeft.appendChild(listItemLeft);
-            if((listItemLeft.getAttribute("id")>10)&&(listItemLeft.getAttribute("id")<21))
-            {
-                score ++ ;
-                console.log(score);
-            }
-
-        }else if (key == 37) {
-			
-            right= true;
-			left = false ;
-			up = false;
-			down = false;
-            counter ++ ;
-			
-            var listItemRight = document.createElement("li");
-            listItemRight.innerHTML = listItemCenter.innerHTML  ;
-            listItemRight.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olRight.appendChild(listItemRight);
-            if((listItemRight.getAttribute("id")>30)&&(listItemRight.getAttribute("id")<41))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-        else if (key == 38) {
-            up= true;
-			down = false;
-			right= false;
-			left = false ;
-            counter ++ ;
-            var listItemUp = document.createElement("li");
-            listItemUp.innerHTML = listItemCenter.innerHTML  ;
-            listItemUp.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olUp.appendChild(listItemUp);
-            if((listItemUp.getAttribute("id")>0)&&(listItemUp.getAttribute("id")<11))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-        else if (key == 40) {
-            down = true;
-			right= false;
-			left = false ;
-			up = false;
-            counter ++ ;
-            var listItemDown = document.createElement("li");
-            listItemDown.innerHTML = listItemCenter.innerHTML  ;
-            listItemDown.setAttribute("id",listItemCenter.getAttribute("id"));
-            olCenter.removeChild(listItemCenter);
-            olDown.appendChild(listItemDown);
-            if((listItemDown.getAttribute("id")>20)&&(listItemDown.getAttribute("id")<31))
-            {
-                score ++ ;
-                console.log(score);
-            }
-        }
-        else if ((key == 13)&&((down == true )||(up == true )||(right == true )||(left == true )))
-        {
-			if(currentWord != partie){
-				divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
-				listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
-				listItemCenter.setAttribute("id",dictionary[counter].key);
-				olCenter.appendChild(listItemCenter);
-				currentWord ++
-			}
-			else if(currentWord == partie){
-				divScore.innerHTML = "<h3>La partie est terminée, vous avez marqués "+score+" points !</h3>"
-			}
-			
-			
-
-        }
-    }*/
+//================== clicNouvellePartie ==================
+function clicNouvellePartie() {
+	location.reload(); 
+}

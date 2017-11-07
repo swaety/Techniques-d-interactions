@@ -281,9 +281,9 @@ function Down() {
 }
 
 function Enter() {
+	counter ++;
 	if(incScore){
 		score ++;
-		counter ++;
 		incScore = false;
 	}
 	if (((down == true )||(up == true )||(right == true )||(left == true ))){

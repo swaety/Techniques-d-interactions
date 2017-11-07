@@ -37,9 +37,30 @@ button[type=submit] {
 	color: var(--couleurWhiteDrag);
 }
 
+.otherList{
+	margin-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 130px;
+	list-style-type: none;
+	color: var(--couleurGreyDrag);
+	background-color: var(--couleurWhiteDrag);
+	text-align: center;
+}
+
 .centerList{
 	margin-top: 70px;
+	margin-left: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 130px;
+	list-style-type: none;
+	color: var(--couleurGreyDrag);
+	background-color: var(--couleurWhiteDrag);
+	text-align: center;
 }
+
+#listC{cursor: default;}
 
 #ol-right{
 	background-color: var(--couleurGreyDrag);

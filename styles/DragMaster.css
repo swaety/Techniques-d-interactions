@@ -1,9 +1,15 @@
 :root { 
-  --couleurBlackDrag: Black; 
+	--couleurWhiteDrag: white; 
+	--couleurBlackDrag: Black; 
+	--couleurGreyDrag: #333; 
 }
 	  
 #conso{
 	border: solid var(--couleurBlackDrag) 1px;
+}
+
+h2{
+	color: var(--couleurWhiteDrag);
 }
 
 a:hover {
@@ -14,13 +20,51 @@ a:hover {
   clear: both;
 }
 
+#ol-center{
+	background-color: var(--couleurGreyDrag);
+	color: var(--couleurWhiteDrag);
+}
+
+.centerList{
+	margin-top: 70px;
+}
+
+#ol-right{
+	background-color: var(--couleurGreyDrag);
+	color: var(--couleurWhiteDrag);
+}
+#ol-left{
+	background-color: var(--couleurGreyDrag);
+	color: var(--couleurWhiteDrag);
+}
+#ol-up{
+	background-color: var(--couleurGreyDrag);
+	color: var(--couleurWhiteDrag);
+}
+#ol-down{
+	background-color: var(--couleurGreyDrag);
+	color: var(--couleurWhiteDrag);
+}
+
 #grid {
-  width: 660px;
+  width: 540px;
+}
+
+#score {
+	color : var(--couleurBlackDrag);
+}
+
+#dir {
+	color : var(--couleurBlackDrag);
+}
+
+#title1{
+	color : var(--couleurBlackDrag);
 }
 
 .grid-element {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
   margin: 10px;
   float: left;
 }

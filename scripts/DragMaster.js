@@ -1,142 +1,292 @@
-
-
-map_categories = {"voitures": ["Renault", "Volkswagen","Peugeot","Citroen"], "alimentaire": ["nutella", "nestle"],
- "vetements": ["zara", "celio"], "smartphone": ["iphone", "galaxy"]}
- var dictionary = [
-    
-    { key: '2', value: 'Volkswagen' },
-    { key: '18', value: 'HTC' },
-    { key: '19', value: 'Apple' },
-    { key: '3', value: 'Peugeot' },
-    { key: '14', value: 'Tom & Pilou ' },
-    { key: '15', value: 'Poulain' },
-    { key: '4', value: 'Citroen' },
-    { key: '8', value: 'Nina Ricci' },
-    { key: '11', value: 'Ovomaltine' },
-    { key: '5', value: 'Ford' },
-    { key: '6', value: 'Zara' },
-    { key: '13', value: 'Suchard' },
-    { key: '1', value: 'Renault' },
-    { key: '16', value: 'Acer' },
-    { key: '17', value: 'Alcatel' },
-    { key: '7', value: 'Celio' },
-    { key: '12', value: 'Rik & Rok' },
-    { key: '20', value: 'Archos' },
-    { key: '9', value: 'Channel' },
-    { key: '10', value: 'Nutella' }
-    
+var dictionary = [		
+	{ key: '24', value: 'Milka' },
+    { key: '22', value: 'Suchard' },
+	{ key: '17', value: 'Huawei' },
+    { key: '14', value: 'Sony' },
+    { key: '2', value: 'Addidas' },
+	{ key: '37', value: 'Mazda' },
+    { key: '30', value: 'Kinder' },
+    { key: '6', value: 'Prada' },
+    { key: '4', value: 'Gucci' },
+    { key: '8', value: 'Levis' },
+	
+	{ key: '29', value: 'M&M\'s' },
+	{ key: '21', value: 'Lindt' },
+    { key: '32', value: 'Renault' },
+	{ key: '25', value: 'Cote d\'or' },
+    { key: '34', value: 'Lamborghini' },
+	{ key: '27', value: 'Poulain' },
+	{ key: '31', value: 'Peugeot' },
+	{ key: '5', value: 'H&M' },
+    { key: '26', value: 'Toblerone' },
+    { key: '36', value: 'Ford' },
+	
+	{ key: '13', value: 'Motorola' },
+	{ key: '33', value: 'Ferrari' },
+    { key: '18', value: 'Nokia' },
+	{ key: '35', value: 'Bugatti' },
+	{ key: '39', value: 'Nissan' },
+	{ key: '3', value: 'Puma' },
+    { key: '12', value: 'HTC' },
+    { key: '38', value: 'Citroen' },
+    { key: '20', value: 'Xiaomi' },
+	{ key: '9', value: 'Oxbow' },
+	
+	{ key: '19', value: 'Blackberry' },
+    { key: '10', value: 'Armani' },
+    { key: '40', value: 'Bentley' },
+	{ key: '7', value: 'Louis Vuitton' },
+	{ key: '15', value: 'Samsung' },
+	{ key: '1', value: 'Nike' },
+    { key: '16', value: 'Wiko' },
+	{ key: '11', value: 'Apple' },
+    { key: '28', value: 'Ferrero' },
+	{ key: '23', value: 'Nestlé' }
 ]
+
+var partie = 10;
+var currentWord = 1;
 var left = false ;
 var right = false ;
 var up = false ;
 var down = false ;
 var counter = 0 ; 
 var score = 0 ;
-function Mykeypress(code)
-{
-    var e = jQuery.Event( "keydown", { keyCode: code } );
-    // trigger an artificial keydown event with keyCode 64
-    jQuery( "body" ).trigger( e );
-   
 
-}
+var olCenter = null;
+var olRight = null;
+var olLeft = null;
+var olUp = null;
+var olDown = null;
+var divScore = null;
+var listItemCenter = null;
+
 
  window.addEventListener("DOMContentLoaded",function(){
-    
-    
- 
-    var olCenter = document.getElementById("ol-center");
-    var olRight = document.getElementById("ol-right");
-    var olLeft = document.getElementById("ol-left");
-    var olUp = document.getElementById("ol-up");
-    var olDown = document.getElementById("ol-down");
-    var divScore = document.getElementById("score");
-    
+olCenter = document.getElementById("ol-center");
+olRight = document.getElementById("ol-right");
+olLeft = document.getElementById("ol-left");
+olUp = document.getElementById("ol-up");
+olDown = document.getElementById("ol-down");
+divScore = document.getElementById("score");
 
 
-    var listItemCenter = document.createElement("li");
-    listItemCenter.innerHTML = "<a>"+ dictionary[counter].value + "</a>" ;
-    listItemCenter.setAttribute("id",dictionary[counter].key);
-    olCenter.appendChild(listItemCenter);
+    
+listItemCenter = document.createElement("li");
+listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
+listItemCenter.setAttribute("id",dictionary[counter].key);
+listItemCenter.setAttribute("class","centerList");
+olCenter.appendChild(listItemCenter);
+})
 
-    window.onkeydown = function(e) {
-        var key = e.keyCode ? e.keyCode : e.which;
-        console.log(e.which);
-        console.log(e.keyCode);
-        if (key == 39) {
+function getRandomInt() {
+  min = Math.ceil(1);
+  max = Math.floor(5);
+  return Math.floor(Math.random() * (5 - 1)) + 1;
+}
+
+var random = getRandomInt();
+
+if(random == 1){
+	counter = 0;
+}
+else if(random == 2){
+	counter = 10;
+}
+else if(random == 3){
+	counter = 20;
+}
+else if(random == 4){
+	counter = 30;
+}
+
+
+
+function Right() {
+			
             left = true ;
+			right = false;
+			up = false;
+			down = false;
+			
             counter ++ ;
             var listItemLeft = document.createElement("li");
             listItemLeft.innerHTML = listItemCenter.innerHTML  ;
             listItemLeft.setAttribute("id",listItemCenter.getAttribute("id"));
             olCenter.removeChild(listItemCenter);
             olLeft.appendChild(listItemLeft);
-            if((listItemLeft.getAttribute("id")>14)&&(listItemLeft.getAttribute("id")<21))
+            if((listItemLeft.getAttribute("id")>10)&&(listItemLeft.getAttribute("id")<21))
             {
                 score ++ ;
                 console.log(score);
-                divScore.innerHTML = "<h3> votre score est : "+score+"</h3>"
             }
 
-        }else if (key == 37) {
+        }
+		
+		function Left() {
+			
             right= true;
+			left = false ;
+			up = false;
+			down = false;
             counter ++ ;
+			
             var listItemRight = document.createElement("li");
             listItemRight.innerHTML = listItemCenter.innerHTML  ;
             listItemRight.setAttribute("id",listItemCenter.getAttribute("id"));
             olCenter.removeChild(listItemCenter);
             olRight.appendChild(listItemRight);
-            if((listItemRight.getAttribute("id")>0)&&(listItemRight.getAttribute("id")<6))
+            if((listItemRight.getAttribute("id")>30)&&(listItemRight.getAttribute("id")<41))
             {
                 score ++ ;
                 console.log(score);
-                divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
             }
         }
-        else if (key == 38) {
+       function Up() {
             up= true;
+			down = false;
+			right= false;
+			left = false ;
             counter ++ ;
             var listItemUp = document.createElement("li");
             listItemUp.innerHTML = listItemCenter.innerHTML  ;
             listItemUp.setAttribute("id",listItemCenter.getAttribute("id"));
             olCenter.removeChild(listItemCenter);
             olUp.appendChild(listItemUp);
-            if((listItemUp.getAttribute("id")>5)&&(listItemUp.getAttribute("id")<10))
+            if((listItemUp.getAttribute("id")>0)&&(listItemUp.getAttribute("id")<11))
             {
                 score ++ ;
                 console.log(score);
-                divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
             }
         }
-        else if (key == 40) {
+        function Down() {
             down = true;
+			right= false;
+			left = false ;
+			up = false;
             counter ++ ;
             var listItemDown = document.createElement("li");
             listItemDown.innerHTML = listItemCenter.innerHTML  ;
             listItemDown.setAttribute("id",listItemCenter.getAttribute("id"));
             olCenter.removeChild(listItemCenter);
             olDown.appendChild(listItemDown);
-            if((listItemDown.getAttribute("id")>9)&&(listItemDown.getAttribute("id")<16))
+            if((listItemDown.getAttribute("id")>20)&&(listItemDown.getAttribute("id")<31))
             {
                 score ++ ;
                 console.log(score);
-                divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
+            }
+        }
+		function Enter() {
+			if (((down == true )||(up == true )||(right == true )||(left == true ))){
+				if(currentWord != partie){
+					divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
+					listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
+					listItemCenter.setAttribute("id",dictionary[counter].key);
+					olCenter.appendChild(listItemCenter);
+					currentWord ++
+				}
+				else if(currentWord == partie){
+					divScore.innerHTML = "<h3>La partie est terminée, vous avez marqués "+score+" points !</h3>"
+				}
+			}
+		}
+
+
+    
+    
+ 
+    
+
+    /*window.onkeydown = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+        console.log(e.which);
+        console.log(e.keyCode);
+        if (key == 39) {
+			
+            left = true ;
+			right = false;
+			up = false;
+			down = false;
+			
+            counter ++ ;
+            var listItemLeft = document.createElement("li");
+            listItemLeft.innerHTML = listItemCenter.innerHTML  ;
+            listItemLeft.setAttribute("id",listItemCenter.getAttribute("id"));
+            olCenter.removeChild(listItemCenter);
+            olLeft.appendChild(listItemLeft);
+            if((listItemLeft.getAttribute("id")>10)&&(listItemLeft.getAttribute("id")<21))
+            {
+                score ++ ;
+                console.log(score);
+            }
+
+        }else if (key == 37) {
+			
+            right= true;
+			left = false ;
+			up = false;
+			down = false;
+            counter ++ ;
+			
+            var listItemRight = document.createElement("li");
+            listItemRight.innerHTML = listItemCenter.innerHTML  ;
+            listItemRight.setAttribute("id",listItemCenter.getAttribute("id"));
+            olCenter.removeChild(listItemCenter);
+            olRight.appendChild(listItemRight);
+            if((listItemRight.getAttribute("id")>30)&&(listItemRight.getAttribute("id")<41))
+            {
+                score ++ ;
+                console.log(score);
+            }
+        }
+        else if (key == 38) {
+            up= true;
+			down = false;
+			right= false;
+			left = false ;
+            counter ++ ;
+            var listItemUp = document.createElement("li");
+            listItemUp.innerHTML = listItemCenter.innerHTML  ;
+            listItemUp.setAttribute("id",listItemCenter.getAttribute("id"));
+            olCenter.removeChild(listItemCenter);
+            olUp.appendChild(listItemUp);
+            if((listItemUp.getAttribute("id")>0)&&(listItemUp.getAttribute("id")<11))
+            {
+                score ++ ;
+                console.log(score);
+            }
+        }
+        else if (key == 40) {
+            down = true;
+			right= false;
+			left = false ;
+			up = false;
+            counter ++ ;
+            var listItemDown = document.createElement("li");
+            listItemDown.innerHTML = listItemCenter.innerHTML  ;
+            listItemDown.setAttribute("id",listItemCenter.getAttribute("id"));
+            olCenter.removeChild(listItemCenter);
+            olDown.appendChild(listItemDown);
+            if((listItemDown.getAttribute("id")>20)&&(listItemDown.getAttribute("id")<31))
+            {
+                score ++ ;
+                console.log(score);
             }
         }
         else if ((key == 13)&&((down == true )||(up == true )||(right == true )||(left == true )))
         {
-            listItemCenter.innerHTML = "<a>"+ dictionary[counter].value + "</a>" ;
-            listItemCenter.setAttribute("id",dictionary[counter].key);
-            olCenter.appendChild(listItemCenter);
+			if(currentWord != partie){
+				divScore.innerHTML = "<h3> votre score est :"+score+"</h3>"
+				listItemCenter.innerHTML = "<a id=\"listC\">"+ dictionary[counter].value + "</a>" ;
+				listItemCenter.setAttribute("id",dictionary[counter].key);
+				olCenter.appendChild(listItemCenter);
+				currentWord ++
+			}
+			else if(currentWord == partie){
+				divScore.innerHTML = "<h3>La partie est terminée, vous avez marqués "+score+" points !</h3>"
+			}
+			
+			
 
         }
-    }
-    
-    
-      
-    
-
-    
-
-
- })
+    }*/

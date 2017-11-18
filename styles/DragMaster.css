@@ -12,6 +12,14 @@ h2{
 	color: var(--couleurWhiteDrag);
 }
 
+#placement{
+	color: var(--couleurBlackDrag);
+	position: absolute;
+	right: 180px;
+	top: 500px;
+	max-width: 450px;
+}
+
 a:hover {
 	cursor: pointer;
 }

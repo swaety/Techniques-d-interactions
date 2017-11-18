@@ -64,6 +64,9 @@ button{
 #controle { 
 	margin: 14px auto 14px auto;
 	width: 25%;
+	position: absolute;
+	top: 100px;
+	left: 20px;
 }
 
 button[type=submit] {

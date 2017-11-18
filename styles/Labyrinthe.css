@@ -20,6 +20,17 @@ body{
 	color: var(--couleurBlackLab);
 }
 
+#erro{
+	position: absolute;
+	left: 100px;
+	top: 100px;
+}
+
+#aCacher{
+	max-width: 1000px;
+	margin: auto;
+}
+
 h1 {
 	margin: 0px;
 	text-align: center;

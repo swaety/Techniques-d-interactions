@@ -15,6 +15,7 @@
 		  else if(event.key == "ArrowRight"){Jeu.clicDroite();}
 		  else if(event.key == "ArrowDown"){Jeu.clicBas();}
 		  else if(event.key == "Enter"){Jeu.clicAvancer();}
+		  else if(event.key == " "){Jeu.clicAvancer();}
 		});
 		</script>
 	</head>
@@ -27,7 +28,7 @@
 			<h2 id="console"></h2>
 		</div>
 		<h3 id="erro">Nombre d'erreur(s) : 0</h3>
-		<h3 id="aCacher">Règles du jeu : fait parcourir la flèche du point de départ à l'arrivé en utilisant les boutons (pivoter à gauche, avancer ou pivoter à droite) ou bien en utilisant les flèches directionelles de ton clavier</h3>
+		<h3 id="aCacher">Règles du jeu : fais parcourir la flèche du point de départ à l'arrivé en utilisant les boutons(haut, bas, ok pour avancer ,gauche ou droite) ou bien en utilisant les flèches directionelles de ton clavier et la touche entrée ou espace pour valider ton déplacement</h3>
 
 		<div id="console2" class="controle">
 			<a><img id="conso" src="../images/console/haut.png" onclick="Jeu.clicHaut()" alt="" /></a>

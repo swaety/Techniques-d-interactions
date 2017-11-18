@@ -15,6 +15,7 @@
 			else if(event.key == "ArrowRight"){setBorder(event.key);}
 			else if(event.key == "ArrowDown"){setBorder(event.key);}
 			else if(event.key == "Enter" && !document.getElementsByClassName("selected")[0].disabled){clicLettre(document.getElementsByClassName("selected")[0], document.getElementsByClassName("selected")[0].id);}
+			else if(event.key == " " && !document.getElementsByClassName("selected")[0].disabled){clicLettre(document.getElementsByClassName("selected")[0], document.getElementsByClassName("selected")[0].id);}
 		});
 		
 		function currentClick(){
@@ -32,7 +33,7 @@
 		<div class="jeu">
 			<span id="jeu">Pendu</span> 
 		</div>
-		<!--<div id="alpha">
+		<div id="alpha">
 			<button id="A" type="button" class="alpha selected" onclick="clicLettre(this, 'A')">
 				A 
 			</button>
@@ -112,9 +113,9 @@
 			<button id="Z" type="button" class="alpha" onclick="clicLettre(this, 'Z')">
 				Z 
 			</button>
-		</div>-->
+		</div>
 		
-		<div id="alpha">
+		<!--<div id="alpha">
 			<button id="A" type="button" class="alpha selected">
 				A 
 			</button>
@@ -194,10 +195,10 @@
 			<button id="Z" type="button" class="alpha">
 				Z 
 			</button>
-		</div>
+		</div>-->
 		<div id="console">
 		</div>
-		<h3>Règles du jeu : Trouve le mot caché en cliquant sur les lettres ou en appuyant sur les lettres de ton clavier. Attention tu as le droit à 5 erreurs maximum</h3>
+		<h3>Règles du jeu : Trouves le mot caché en déplaçant le sélecteur sur les lettres en utilisant les flèches de ton clavier ou les flèches sur l'écran. Utilises entrée ou espace pour valider. Attention tu as le droit à 5 erreurs maximum</h3>
 		<a><img id="conso" src="../images/console/haut.png" onclick="setBorder('ArrowUp');" alt="" /></a>
 			<a><img id="conso" src="../images/console/bas.png" onclick="setBorder('ArrowDown');" script="cursor:pointer;" alt="" /></a>
 			<a><img id="conso" src="../images/console/ok.png" onclick="currentClick()" script="cursor:pointer;" alt="" /></a>		
